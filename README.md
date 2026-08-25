@@ -32,7 +32,7 @@ make run
 make clean
 ```
 
-## 二、在 Windows 系统中运行
+## 三、在 Windows 系统中运行
 
 本游戏已在 `main.cpp` 中做好 Windows 控制台兼容（自动启用 ANSI 彩色 + UTF-8 中文），可直接在 Windows 编译运行。
 
@@ -57,7 +57,7 @@ g++ -std=c++17 -Wall -Wextra -O2 main.cpp item.cpp creature.cpp room.cpp world.c
 
 > 提示：Windows 下建议使用 Windows Terminal（Win11 默认终端）或较新版本的 cmd 以获得最佳彩色显示效果。
 
-## 三、快速上手
+## 四、快速上手
 
 ```
 1. 主菜单选 1 开始新游戏
@@ -69,7 +69,7 @@ g++ -std=c++17 -Wall -Wextra -O2 main.cpp item.cpp creature.cpp room.cpp world.c
 7. 随时 save 存档；quit 退出，主菜单选 2 读档
 ```
 
-## 四、文件结构
+## 五、文件结构
 
 | 文件 | 说明 |
 |---|---|
@@ -84,7 +84,24 @@ g++ -std=c++17 -Wall -Wextra -O2 main.cpp item.cpp creature.cpp room.cpp world.c
 | `build_windows.bat` | Windows 一键编译脚本 |
 | `课程设计文档.md` | 完整课程设计文档（WBS / 用例图 / UML / 流程图 / STL / 设计模式） |
 
-## 五、备注
+## 六、Git 上传到 GitHub
+
+本仓库已托管到 GitHub：`https://github.com/GJF080117/gjf`（默认展示分支 `main`，`master` 同步更新）。
+
+修改代码后，按下面三步即可更新到 GitHub：
+
+```bash
+git add -A                 # 1. 暂存所有改动
+git commit -m "本次更新说明" # 2. 提交（写清楚改了什么）
+git push                   # 3. 推送到 GitHub
+```
+
+> 提示：
+> - `.gitignore` 已自动排除 `save.dat`（游戏存档）与 `mud.exe` / `*.o`（编译产物），不会被误传。
+> - 远程 `main` 与 `master` 默认保持一致；如需把 `master` 的更新同步到默认展示分支 `main`，执行 `git push origin master:main`。
+> - 首次推送需登录 GitHub（弹窗输入账号密码或 Personal Access Token）。
+
+## 七、备注
 
 - 仅依赖标准 C++17 库与 ANSI 转义色码，Linux / macOS 终端直接支持；Windows 由 `main.cpp` 自动启用 ANSI 与 UTF-8，跨平台无第三方依赖。
 - 存档文件 `save.dat` 生成于运行目录。
